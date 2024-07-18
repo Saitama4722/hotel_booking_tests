@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="7" time="5.382" timestamp="2024-07-18T20:24:24.245397" hostname="DESKTOP-5KB2LCM"><testcase classname="tests.test_auth" name="test_auth_success" time="0.936" /><testcase classname="tests.test_auth" name="test_auth_failure" time="0.675" /><testcase classname="tests.test_create_booking" name="test_create_booking_success" time="0.671" /><testcase classname="tests.test_create_booking" name="test_create_booking_failure" time="0.671"><failure message="assert 200 == 400&#10; +  where 200 = &lt;Response [200]&gt;.status_code">def test_create_booking_failure():
+        url = "https://restful-booker.herokuapp.com/booking"
+        data = {
+            "firstname": "Jim",
+            "lastname": "Brown",
+            "totalprice": 111,
+            "depositpaid": "not-boolean",  # Некорректное значение для поля depositpaid
+            "bookingdates": {
+                "checkin": "2024-07-14",
+                "checkout": "2024-07-15"
+            },
+            "additionalneeds": "Breakfast"
+        }
+        response = requests.post(url, json=data)
+        print(response.status_code)  # Для отладки
+        print(response.text)         # Для отладки
+&gt;       assert response.status_code == 400  # Ожидаем код состояния 400
+E       assert 200 == 400
+E        +  where 200 = &lt;Response [200]&gt;.status_code
+
+tests\test_create_booking.py:37: AssertionError</failure></testcase><testcase classname="tests.test_create_booking" name="test_create_booking_failure_missing_field" time="0.688"><failure message="assert 500 == 400&#10; +  where 500 = &lt;Response [500]&gt;.status_code">def test_create_booking_failure_missing_field():
+        url = "https://restful-booker.herokuapp.com/booking"
+        data = {
+            "lastname": "Brown",  # Отсутствует firstname
+            "totalprice": 111,
+            "depositpaid": True,
+            "bookingdates": {
+                "checkin": "2024-07-14",
+                "checkout": "2024-07-15"
+            },
+            "additionalneeds": "Breakfast"
+        }
+        response = requests.post(url, json=data)
+        print(response.status_code)  # Для отладки
+        print(response.text)         # Для отладки
+&gt;       assert response.status_code == 400  # Ожидаем код состояния 400
+E       assert 500 == 400
+E        +  where 500 = &lt;Response [500]&gt;.status_code
+
+tests\test_create_booking.py:54: AssertionError</failure></testcase><testcase classname="tests.test_get_booking" name="test_get_booking_success" time="0.682" /><testcase classname="tests.test_get_booking" name="test_get_booking_failure" time="0.672" /></testsuite></testsuites>
