@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4178f0d8-032f-4c3a-9b02-9ee53dea8c5c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/qase_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/qase_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_qase_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_qase_results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
