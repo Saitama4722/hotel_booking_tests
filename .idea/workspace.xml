@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4178f0d8-032f-4c3a-9b02-9ee53dea8c5c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_create_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_create_booking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_get_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_get_booking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload_qase_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_qase_results.py" afterDir="false" />
-    </list>
+    <list default="true" id="4178f0d8-032f-4c3a-9b02-9ee53dea8c5c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +35,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Rebasing main",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
