@@ -1,5 +1,4 @@
 import requests
-import pytest
 
 def test_create_booking_success():
     url = "https://restful-booker.herokuapp.com/booking"
@@ -23,8 +22,8 @@ def test_create_booking_failure():
     data = {
         "firstname": "Jim",
         "lastname": "Brown",
-        "totalprice": 111,
-        "depositpaid": "not-boolean",  # Некорректное значение для поля depositpaid
+        "totalprice": "invalid_price",  # Некорректное значение
+        "depositpaid": True,
         "bookingdates": {
             "checkin": "2024-07-14",
             "checkout": "2024-07-15"
@@ -32,9 +31,7 @@ def test_create_booking_failure():
         "additionalneeds": "Breakfast"
     }
     response = requests.post(url, json=data)
-    print(response.status_code)  # Для отладки
-    print(response.text)         # Для отладки
-    assert response.status_code == 400  # Ожидаем код состояния 400
+    assert response.status_code == 400  # Ожидаемый код состояния при неудаче
 
 def test_create_booking_failure_missing_field():
     url = "https://restful-booker.herokuapp.com/booking"
@@ -49,6 +46,4 @@ def test_create_booking_failure_missing_field():
         "additionalneeds": "Breakfast"
     }
     response = requests.post(url, json=data)
-    print(response.status_code)  # Для отладки
-    print(response.text)         # Для отладки
-    assert response.status_code == 400  # Ожидаем код состояния 400
+    assert response.status_code == 400  # Ожидаемый код состояния при неудаче

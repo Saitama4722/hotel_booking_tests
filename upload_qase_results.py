@@ -9,4 +9,4 @@ project_code = config['projectCode']
 results_file = "results.xml"
 
 response = api.results.create_from_junit(project_code, results_file)
-print(response)  # Добавьте это для проверки ответа от API
+print(response)  # Для проверки ответа от API
