@@ -19,7 +19,11 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
+<<<<<<< HEAD
         python-version: '3.12'
+=======
+        python-version: '3.8'
+>>>>>>> 25a8334 (Integrate QASE with CI/CD)
 
     - name: Install dependencies
       run: |
@@ -33,6 +37,10 @@ jobs:
 
     - name: Upload test results to QASE
       run: |
+<<<<<<< HEAD
         python upload_qase_results.py
+=======
+        python qase_config.py
+>>>>>>> 25a8334 (Integrate QASE with CI/CD)
       env:
         QASE_API_TOKEN: ${{ secrets.QASE_API_TOKEN }}

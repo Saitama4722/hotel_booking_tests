@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="4178f0d8-032f-4c3a-9b02-9ee53dea8c5c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_create_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_create_booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_get_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_get_booking.py" afterDir="false" />
+>>>>>>> 25a8334 (Integrate QASE with CI/CD)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
