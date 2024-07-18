@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="7" time="5.382" timestamp="2024-07-18T20:24:24.245397" hostname="DESKTOP-5KB2LCM"><testcase classname="tests.test_auth" name="test_auth_success" time="0.936" /><testcase classname="tests.test_auth" name="test_auth_failure" time="0.675" /><testcase classname="tests.test_create_booking" name="test_create_booking_success" time="0.671" /><testcase classname="tests.test_create_booking" name="test_create_booking_failure" time="0.671"><failure message="assert 200 == 400&#10; +  where 200 = &lt;Response [200]&gt;.status_code">def test_create_booking_failure():
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="7" time="5.334" timestamp="2024-07-18T21:41:18.985086" hostname="DESKTOP-5KB2LCM"><testcase classname="tests.test_auth" name="test_auth_success" time="0.910" /><testcase classname="tests.test_auth" name="test_auth_failure" time="0.668" /><testcase classname="tests.test_create_booking" name="test_create_booking_success" time="0.663" /><testcase classname="tests.test_create_booking" name="test_create_booking_failure" time="0.669"><failure message="assert 200 == 400&#10; +  where 200 = &lt;Response [200]&gt;.status_code">def test_create_booking_failure():
         url = "https://restful-booker.herokuapp.com/booking"
         data = {
             "firstname": "Jim",
             "lastname": "Brown",
-            "totalprice": 111,
-            "depositpaid": "not-boolean",  # Некорректное значение для поля depositpaid
+            "totalprice": "invalid_price",  # Некорректное значение
+            "depositpaid": True,
             "bookingdates": {
                 "checkin": "2024-07-14",
                 "checkout": "2024-07-15"
@@ -12,13 +12,11 @@
             "additionalneeds": "Breakfast"
         }
         response = requests.post(url, json=data)
-        print(response.status_code)  # Для отладки
-        print(response.text)         # Для отладки
-&gt;       assert response.status_code == 400  # Ожидаем код состояния 400
+&gt;       assert response.status_code == 400  # Ожидаемый код состояния при неудаче
 E       assert 200 == 400
 E        +  where 200 = &lt;Response [200]&gt;.status_code
 
-tests\test_create_booking.py:37: AssertionError</failure></testcase><testcase classname="tests.test_create_booking" name="test_create_booking_failure_missing_field" time="0.688"><failure message="assert 500 == 400&#10; +  where 500 = &lt;Response [500]&gt;.status_code">def test_create_booking_failure_missing_field():
+tests\test_create_booking.py:34: AssertionError</failure></testcase><testcase classname="tests.test_create_booking" name="test_create_booking_failure_missing_field" time="0.680"><failure message="assert 500 == 400&#10; +  where 500 = &lt;Response [500]&gt;.status_code">def test_create_booking_failure_missing_field():
         url = "https://restful-booker.herokuapp.com/booking"
         data = {
             "lastname": "Brown",  # Отсутствует firstname
@@ -31,10 +29,16 @@ tests\test_create_booking.py:37: AssertionError</failure></testcase><testcase cl
             "additionalneeds": "Breakfast"
         }
         response = requests.post(url, json=data)
-        print(response.status_code)  # Для отладки
-        print(response.text)         # Для отладки
-&gt;       assert response.status_code == 400  # Ожидаем код состояния 400
+&gt;       assert response.status_code == 400  # Ожидаемый код состояния при неудаче
 E       assert 500 == 400
 E        +  where 500 = &lt;Response [500]&gt;.status_code
 
-tests\test_create_booking.py:54: AssertionError</failure></testcase><testcase classname="tests.test_get_booking" name="test_get_booking_success" time="0.682" /><testcase classname="tests.test_get_booking" name="test_get_booking_failure" time="0.672" /></testsuite></testsuites>
+tests\test_create_booking.py:49: AssertionError</failure></testcase><testcase classname="tests.test_get_booking" name="test_get_booking_success" time="0.668"><failure message="assert 404 == 200&#10; +  where 404 = &lt;Response [404]&gt;.status_code">def test_get_booking_success():
+        booking_id = 1  # Убедитесь, что этот ID существует
+        url = f"https://restful-booker.herokuapp.com/booking/{booking_id}"
+        response = requests.get(url)
+&gt;       assert response.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = &lt;Response [404]&gt;.status_code
+
+tests\test_get_booking.py:7: AssertionError</failure></testcase><testcase classname="tests.test_get_booking" name="test_get_booking_failure" time="0.667" /></testsuite></testsuites>
