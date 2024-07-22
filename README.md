@@ -24,3 +24,10 @@
 ```bash
 git clone https://github.com/yourusername/hotel_booking_tests.git
 cd hotel_booking_tests
+
+## Как запустить тесты
+
+Для запуска тестов используйте следующую команду:
+
+```sh
+pytest
