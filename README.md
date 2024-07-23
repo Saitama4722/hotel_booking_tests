@@ -29,5 +29,5 @@ cd hotel_booking_tests
 
 Для запуска тестов используйте следующую команду:
 
-```sh
-pytest
+```bash
+pytest --api-url https://restful-booker.herokuapp.com
