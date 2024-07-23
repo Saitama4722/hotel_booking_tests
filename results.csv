@@ -1,11 +1,8 @@
-TestCase,ClassName,Result,Time,ErrorMessage
-test_auth_success,tests.test_auth,Passed,0.919,
-test_auth_failure,tests.test_auth,Passed,0.668,
-test_create_booking_success,tests.test_create_booking,Passed,0.663,
-test_create_booking_failure,tests.test_create_booking,Failed,0.669,"assert 200 == 400
- +  where 200 = <Response [200]>.status_code"
-test_create_booking_failure_missing_field,tests.test_create_booking,Failed,0.680,"assert 500 == 400
- +  where 500 = <Response [500]>.status_code"
-test_get_booking_success,tests.test_get_booking,Passed,0.668,
-test_get_booking_failure,tests.test_get_booking,Failed,0.667,"assert 404 == 200
- +  where 404 = <Response [404]>.status_code"
+classname,name,time,status
+tests.test_auth,test_auth_success,0.912,passed
+tests.test_auth,test_auth_failure,0.664,passed
+tests.test_create_booking,test_create_booking_success,0.663,passed
+tests.test_create_booking,test_create_booking_failure,0.661,failed
+tests.test_create_booking,test_create_booking_failure_missing_field,0.670,failed
+tests.test_get_booking,test_get_booking_success,0.658,passed
+tests.test_get_booking,test_get_booking_failure,0.661,passed

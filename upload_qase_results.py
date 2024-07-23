@@ -1,16 +1,17 @@
 import json
 from qaseio import QaseApi
-from qaseio.models import TestRunCreate, TestResultCreate, TestRunResultStatus
+from qaseio.models import TestRunCreate
 
-# Загружаем конфигурацию
+# Загрузите конфигурацию
 with open('qase_config.json') as f:
     config = json.load(f)
 
-# Инициализация API с использованием токена
-api = QaseApi(config['apiToken'])
-
+api_token = config['apiToken']
 project_code = config['projectCode']
 results_file = "results.xml"
+
+# Инициализация API с использованием токена
+api = QaseApi(api_token)
 
 # Создание тестового прогона
 test_run = TestRunCreate(title="Test Run")

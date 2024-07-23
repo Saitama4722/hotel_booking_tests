@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4178f0d8-032f-4c3a-9b02-9ee53dea8c5c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/convert_to_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/convert_to_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qase_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/qase_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_create_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_create_booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_get_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_get_booking.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload_qase_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/upload_qase_results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +95,8 @@
       <workItem from="1721590232641" duration="2372000" />
       <workItem from="1721665861609" duration="1680000" />
       <workItem from="1721751492651" duration="2585000" />
+      <workItem from="1721754117524" duration="1700000" />
+      <workItem from="1721755847962" duration="5201000" />
     </task>
     <servers />
   </component>

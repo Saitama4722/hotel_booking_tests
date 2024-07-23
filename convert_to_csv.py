@@ -1,24 +1,22 @@
+import pandas as pd
 import xml.etree.ElementTree as ET
-import csv
 
-def convert_to_csv(xml_file, csv_file):
-    tree = ET.parse(xml_file)
-    root = tree.getroot()
+tree = ET.parse('results.xml')
+root = tree.getroot()
 
-    with open(csv_file, 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(['testcase', 'classname', 'name', 'time', 'status'])
+data = []
+for testsuite in root:
+    for testcase in testsuite:
+        test_data = {
+            'classname': testcase.attrib['classname'],
+            'name': testcase.attrib['name'],
+            'time': testcase.attrib['time'],
+            'status': 'passed'
+        }
+        for child in testcase:
+            if child.tag == 'failure':
+                test_data['status'] = 'failed'
+        data.append(test_data)
 
-        for testsuite in root.findall('testsuite'):
-            for testcase in testsuite.findall('testcase'):
-                classname = testcase.get('classname')
-                name = testcase.get('name')
-                time = testcase.get('time')
-                status = 'passed'
-                if testcase.find('failure') is not None:
-                    status = 'failed'
-                elif testcase.find('error') is not None:
-                    status = 'error'
-                csvwriter.writerow([classname, name, time, status])
-
-convert_to_csv('results.xml', 'results.csv')
+df = pd.DataFrame(data)
+df.to_csv('results.csv', index=False)
