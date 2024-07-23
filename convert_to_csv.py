@@ -1,36 +1,24 @@
-import csv
 import xml.etree.ElementTree as ET
+import csv
 
-# Парсинг XML файла
-tree = ET.parse('results.xml')
-root = tree.getroot()
+def convert_to_csv(xml_file, csv_file):
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
 
-# Открытие CSV файла для записи
-with open('results.csv', 'w', newline='') as csvfile:
-    fieldnames = ['TestCase', 'ClassName', 'Result', 'Time', 'ErrorMessage']
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    with open(csv_file, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(['testcase', 'classname', 'name', 'time', 'status'])
 
-    writer.writeheader()
+        for testsuite in root.findall('testsuite'):
+            for testcase in testsuite.findall('testcase'):
+                classname = testcase.get('classname')
+                name = testcase.get('name')
+                time = testcase.get('time')
+                status = 'passed'
+                if testcase.find('failure') is not None:
+                    status = 'failed'
+                elif testcase.find('error') is not None:
+                    status = 'error'
+                csvwriter.writerow([classname, name, time, status])
 
-    for testsuite in root.findall('testsuite'):
-        for testcase in testsuite.findall('testcase'):
-            classname = testcase.get('classname')
-            name = testcase.get('name')
-            time = testcase.get('time')
-            failure = testcase.find('failure')
-            if failure is not None:
-                result = 'Failed'
-                error_message = failure.get('message')
-            else:
-                result = 'Passed'
-                error_message = ''
-
-            writer.writerow({
-                'TestCase': name,
-                'ClassName': classname,
-                'Result': result,
-                'Time': time,
-                'ErrorMessage': error_message
-            })
-
-print("Results have been written to results.csv")
+convert_to_csv('results.xml', 'results.csv')

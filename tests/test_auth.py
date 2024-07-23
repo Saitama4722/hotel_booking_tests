@@ -1,21 +1,18 @@
 import requests
 
-def test_auth_success():
-    url = "https://restful-booker.herokuapp.com/auth"
+def test_auth_success(url):
     data = {
         "username": "admin",
         "password": "password123"
     }
-    response = requests.post(url, json=data)
+    response = requests.post(f"{url}/auth", json=data)
     assert response.status_code == 200
     assert "token" in response.json()
 
-def test_auth_failure():
-    url = "https://restful-booker.herokuapp.com/auth"
+def test_auth_failure(url):
     data = {
-        "username": "invalid_user",
-        "password": "invalid_pass"
+        "username": "wrong_user",
+        "password": "wrong_pass"
     }
-    response = requests.post(url, json=data)
-    assert response.status_code == 200  # Ожидаемый код состояния при неудаче
-    assert "token" not in response.json()
+    response = requests.post(f"{url}/auth", json=data)
+    assert response.status_code == 401

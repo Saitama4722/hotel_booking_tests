@@ -301,6 +301,21 @@ reports/
 results.xml
 results.csv
 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environments
+.venv/
+env/
+
+# Miscellaneous
+.idea/
+.vscode/
+results.xml
+
+
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can

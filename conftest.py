@@ -5,7 +5,7 @@ def pytest_addoption(parser):
         "--api-url",
         action="store",
         help="enter api url",
-        default="https://restful-booker.herokuapp.com"
+        default="http://test.com",
     )
 
 @pytest.fixture(scope="session")

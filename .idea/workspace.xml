@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4178f0d8-032f-4c3a-9b02-9ee53dea8c5c" name="Changes" comment="" />
+    <list default="true" id="4178f0d8-032f-4c3a-9b02-9ee53dea8c5c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/qase_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/convert_to_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/convert_to_csv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_create_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_create_booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_get_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_get_booking.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +94,7 @@
       <workItem from="1721498962693" duration="21000" />
       <workItem from="1721590232641" duration="2372000" />
       <workItem from="1721665861609" duration="1680000" />
-      <workItem from="1721751492651" duration="494000" />
+      <workItem from="1721751492651" duration="1558000" />
     </task>
     <servers />
   </component>
